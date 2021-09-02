@@ -1,0 +1,21 @@
+{
+  "params":
+  {
+    "local_server":"True",
+    "local_uri":"mysql://root:root@localhost/zincsyblog",
+    "prod_uri": "mysql://root:root@localhost/zincsyblog",
+    "fb_url": "https://www.facebook.com/profile.php?id=100001453246006",
+    "tw_url":"https://twitter.com/Iamsz7",
+    "gh_url": "https://github.com/saurabhzingade",
+    "blog_name": "Zincsy's Website",
+    "about": "Hi this is zincsy. I am learning new things every day",
+    "login_image": "sz2.jpg",
+    "no_of_posts": 2,
+    "gmail-user": "",
+    "gmail-password": "",
+    "admin_user": "sz",
+    "admin_password": "root",
+    "upload_location": "C:\\Flask-Learn\\08-August\\August-17\\static\\assets\\img"
+
+  }
+}

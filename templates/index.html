@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+{% block body %}
+        <!-- Page Header-->
+        <header class="masthead" style="background-image: url(' {{url_for('static',filename= 'assets/img/home-bg.jpg'  )}}  ')">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="site-heading">
+                            <h1>Zincsy's Blog Website</h1>
+                            <span class="subheading">A Website developed while learning Flask</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <strong>Zincsy Writes!</strong> You should check in on some of the blogs below!
+                
+            </div>
+        {% endif %}
+        {% endwith %}
+        <!-- Main Content-->
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+
+
+                    <!-- Post preview-->
+
+                    {% for post in posts %}
+
+                        <a href="/post/{{post.slug}}">
+
+                    <div class="post-preview">
+                        <a href="/post/{{post.slug}}">
+                            <h2 class="post-title">{{ post.title }}</h2>
+                            <h3 class="post-subtitle">{{post.tagline}}</h3>
+                        </a>
+                        <p class="post-meta">
+                            {{post.content[0:30]}}...... <br>
+                            Posted by
+                            <a href="#!">Saurabh Zingade</a>
+                            on {{post.date}}
+                        </p>
+                    </div>
+                    <hr>
+                        </a></li>
+                    {% endfor %}
+                    <!-- Pager-->
+                    <div class="d-flex ">
+                        <a class="btn btn-primary text-uppercase float-left" href="{{next}}">Newer Posts </a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <a class="btn btn-primary text-uppercase float-right" href="{{prev}}">Older Posts →</a><br>
+                    </div>
+                </div>
+            </div>
+        </div>
+{% endblock %}
